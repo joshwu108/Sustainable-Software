@@ -3,11 +3,11 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 
 function AboutPage() {
   return (
-    <Container className="py-5">
-      <Row className="mb-4">
+    <Container className="animate-fade-in">
+      <Row className="mb-5">
         <Col>
-          <h1 className="text-center mb-4">About This Project</h1>
-          <p className="lead text-center">
+          <h1 className="animate-slide-up">About This Project</h1>
+          <p className="lead animate-slide-up">
             Learn more about our crop yield prediction system and how it can help sustainable agriculture.
           </p>
         </Col>
@@ -15,8 +15,10 @@ function AboutPage() {
 
       <Row className="mb-5">
         <Col md={6} className="mb-4">
-          <Card className="shadow-sm h-100">
-            <Card.Header as="h5">The Technology</Card.Header>
+          <Card className="h-100 animate-slide-up">
+            <Card.Header>
+              <h5 className="mb-0">The Technology</h5>
+            </Card.Header>
             <Card.Body>
               <Card.Text>
                 This application uses a Random Forest Regressor model to predict crop yields 
@@ -37,8 +39,10 @@ function AboutPage() {
         </Col>
 
         <Col md={6} className="mb-4">
-          <Card className="shadow-sm h-100">
-            <Card.Header as="h5">Why It Matters</Card.Header>
+          <Card className="h-100 animate-slide-up">
+            <Card.Header>
+              <h5 className="mb-0">Why It Matters</h5>
+            </Card.Header>
             <Card.Body>
               <Card.Text>
                 Accurate crop yield prediction is crucial for:
@@ -68,12 +72,14 @@ function AboutPage() {
 
       <Row>
         <Col md={12}>
-          <Card className="shadow-sm">
-            <Card.Header as="h5">How It Works</Card.Header>
+          <Card className="animate-slide-up">
+            <Card.Header>
+              <h5 className="mb-0">How It Works</h5>
+            </Card.Header>
             <Card.Body>
               <Row>
                 <Col md={4} className="mb-3">
-                  <Card className="h-100 border-0">
+                  <Card className="h-100 border-0 animate-fade-in">
                     <Card.Body className="text-center">
                       <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '60px', height: '60px' }}>
                         <h3 className="m-0">1</h3>
@@ -88,7 +94,7 @@ function AboutPage() {
                 </Col>
 
                 <Col md={4} className="mb-3">
-                  <Card className="h-100 border-0">
+                  <Card className="h-100 border-0 animate-fade-in">
                     <Card.Body className="text-center">
                       <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '60px', height: '60px' }}>
                         <h3 className="m-0">2</h3>
@@ -103,7 +109,7 @@ function AboutPage() {
                 </Col>
 
                 <Col md={4} className="mb-3">
-                  <Card className="h-100 border-0">
+                  <Card className="h-100 border-0 animate-fade-in">
                     <Card.Body className="text-center">
                       <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '60px', height: '60px' }}>
                         <h3 className="m-0">3</h3>

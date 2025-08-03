@@ -7,12 +7,12 @@ function HomePage() {
   const [predictionResult, setPredictionResult] = useState(null);
 
   return (
-    <Container className="py-5">
-      <Row className="mb-4">
+    <Container className="animate-fade-in">
+      <Row className="mb-5">
         <Col>
-          <h1 className="text-center mb-4">Crop Yield Prediction</h1>
-          <p className="lead text-center">
-            Use our machine learning model to predict crop yields based on environmental factors.
+          <h1 className="animate-slide-up">Crop Yield Prediction</h1>
+          <p className="lead animate-slide-up">
+            Use our advanced machine learning model to predict crop yields based on environmental factors and agricultural data.
           </p>
         </Col>
       </Row>
@@ -31,10 +31,10 @@ function HomePage() {
 
       <Row className="mt-5">
         <Col md={4} className="mb-4">
-          <Card className="h-100 shadow-sm">
-            <Card.Body className="text-center">
-              <div className="mb-3">
-                <i className="bi bi-graph-up" style={{ fontSize: '2rem', color: '#0d6efd' }}></i>
+          <Card className="h-100 feature-card">
+            <Card.Body>
+              <div className="feature-icon">
+                <i className="bi bi-graph-up"></i>
               </div>
               <Card.Title>Data-Driven Decisions</Card.Title>
               <Card.Text>
@@ -45,10 +45,10 @@ function HomePage() {
         </Col>
         
         <Col md={4} className="mb-4">
-          <Card className="h-100 shadow-sm">
-            <Card.Body className="text-center">
-              <div className="mb-3">
-                <i className="bi bi-cloud-sun" style={{ fontSize: '2rem', color: '#0d6efd' }}></i>
+          <Card className="h-100 feature-card">
+            <Card.Body>
+              <div className="feature-icon">
+                <i className="bi bi-cloud-sun"></i>
               </div>
               <Card.Title>Environmental Factors</Card.Title>
               <Card.Text>
@@ -60,10 +60,10 @@ function HomePage() {
         </Col>
         
         <Col md={4} className="mb-4">
-          <Card className="h-100 shadow-sm">
-            <Card.Body className="text-center">
-              <div className="mb-3">
-                <i className="bi bi-gear" style={{ fontSize: '2rem', color: '#0d6efd' }}></i>
+          <Card className="h-100 feature-card">
+            <Card.Body>
+              <div className="feature-icon">
+                <i className="bi bi-gear"></i>
               </div>
               <Card.Title>Advanced AI</Card.Title>
               <Card.Text>

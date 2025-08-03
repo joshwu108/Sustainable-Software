@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar expand="lg" className="animate-fade-in">
       <Container>
         <Navbar.Brand as={Link} to="/">Crop Yield Predictor</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button, Card, Row, Col, Spinner, Alert } from 'react-bootstrap';
 import apiService from '../services/api';
 
-// Hardcoded crop options
 const CROP_OPTIONS = [
   'Cassava', 
   'Maize', 
@@ -16,7 +15,6 @@ const CROP_OPTIONS = [
   'Yams'
 ];
 
-// Hardcoded area options
 const AREA_OPTIONS = [
   'Albania',
   'Angola',
@@ -62,13 +60,11 @@ function PredictionForm({ onPredictionResult }) {
     setError(null);
     
     try {
-      // Validate form data
       if (!formData.crop || !formData.area || !formData.rainfall || 
           !formData.pesticides || !formData.temperature) {
         throw new Error('Please fill in all fields');
       }
       
-      // For demonstration, create a mock prediction result instead of API call
       const mockResult = {
         predicted_yield: parseFloat(formData.rainfall) * 0.05 + 
                           parseFloat(formData.temperature) * 0.3 + 
@@ -78,7 +74,6 @@ function PredictionForm({ onPredictionResult }) {
         area: formData.area
       };
       
-      // Wait a bit to simulate API call
       setTimeout(() => {
         onPredictionResult(mockResult);
         setLoading(false);
@@ -92,17 +87,17 @@ function PredictionForm({ onPredictionResult }) {
   };
 
   return (
-    <Card className="shadow-sm">
-      <Card.Header className="bg-primary text-white">
+    <Card className="animate-slide-up">
+      <Card.Header>
         <h4 className="mb-0">Crop Yield Prediction</h4>
       </Card.Header>
       <Card.Body>
         {error && (
-          <Alert variant="danger">{error}</Alert>
+          <Alert variant="danger" className="animate-fade-in">{error}</Alert>
         )}
         
         <Form onSubmit={handleSubmit}>
-          <Row className="mb-3">
+          <Row className="mb-4">
             <Col md={6}>
               <Form.Group controlId="crop">
                 <Form.Label>Crop Type</Form.Label>
@@ -138,7 +133,7 @@ function PredictionForm({ onPredictionResult }) {
             </Col>
           </Row>
           
-          <Row className="mb-3">
+          <Row className="mb-4">
             <Col md={4}>
               <Form.Group controlId="rainfall">
                 <Form.Label>Average Rainfall (mm/year)</Form.Label>
@@ -191,6 +186,7 @@ function PredictionForm({ onPredictionResult }) {
               type="submit" 
               size="lg" 
               disabled={loading}
+              className="animate-fade-in"
             >
               {loading ? (
                 <>

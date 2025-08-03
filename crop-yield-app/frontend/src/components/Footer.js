@@ -4,9 +4,9 @@ function Footer() {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="bg-dark text-light py-3 mt-auto">
+    <footer className="animate-fade-in">
       <div className="container text-center">
-        <p className="mb-0">
+        <p>
           &copy; {year} Crop Yield Predictor | Built with Machine Learning
         </p>
       </div>

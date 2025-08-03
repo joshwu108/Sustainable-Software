@@ -6,14 +6,12 @@ function PredictionResult({ result }) {
 
   const { predicted_yield, confidence, crop, area } = result;
   
-  // Calculate yield rating
   let yieldRating;
   if (predicted_yield < 10) yieldRating = 'Low';
   else if (predicted_yield < 25) yieldRating = 'Moderate';
   else if (predicted_yield < 40) yieldRating = 'Good';
   else yieldRating = 'Excellent';
   
-  // Get badge color based on yield rating
   const getBadgeVariant = () => {
     switch (yieldRating) {
       case 'Low': return 'danger';
@@ -25,16 +23,21 @@ function PredictionResult({ result }) {
   };
 
   return (
-    <Card className="shadow-sm mt-4 prediction-result">
-      <Card.Header className="bg-success text-white">
+    <Card className="prediction-result animate-slide-up">
+      <Card.Header>
         <h4 className="mb-0">Prediction Results</h4>
       </Card.Header>
       <Card.Body>
         <div className="text-center mb-4">
-          <h2>Predicted Yield: {predicted_yield.toFixed(2)} tonnes/hectare</h2>
+          <div className="result-value">
+            {predicted_yield.toFixed(2)}
+          </div>
+          <div className="result-label">
+            tonnes/hectare
+          </div>
           <Badge 
             bg={getBadgeVariant()} 
-            className="mt-2 p-2 fs-5"
+            className="mt-3 p-3 fs-5 animate-fade-in"
           >
             {yieldRating} Yield
           </Badge>
@@ -42,9 +45,9 @@ function PredictionResult({ result }) {
         
         <Row className="mt-4">
           <Col md={6} className="mb-3">
-            <Card className="h-100">
+            <Card className="h-100 animate-fade-in">
               <Card.Body>
-                <Card.Title>Crop Details</Card.Title>
+                <Card.Title className="fw-bold">Crop Details</Card.Title>
                 <Card.Text>
                   <strong>Crop Type:</strong> {crop}<br />
                   <strong>Growing Region:</strong> {area}<br />
@@ -54,9 +57,9 @@ function PredictionResult({ result }) {
           </Col>
           
           <Col md={6} className="mb-3">
-            <Card className="h-100">
+            <Card className="h-100 animate-fade-in">
               <Card.Body>
-                <Card.Title>Prediction Quality</Card.Title>
+                <Card.Title className="fw-bold">Prediction Quality</Card.Title>
                 <Card.Text>
                   <strong>Confidence Level:</strong> {(confidence * 100).toFixed(1)}%<br />
                   <strong>Model:</strong> Random Forest Regressor<br />
@@ -66,8 +69,8 @@ function PredictionResult({ result }) {
           </Col>
         </Row>
         
-        <div className="mt-3 text-center">
-          <p className="text-muted">
+        <div className="mt-4 text-center">
+          <p className="text-muted animate-fade-in">
             Note: This prediction is based on the environmental factors and historical data.
             Actual yield may vary depending on specific farming practices and unforeseen conditions.
           </p>
